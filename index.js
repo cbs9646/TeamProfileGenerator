@@ -34,6 +34,24 @@ const managerQuestionList = [
     },
 ];
 
+// array to ask if you would like to create a new employee
+
+const createNewEmployeeQuestion = {
+    type: "list",
+    name: "createNewEmployeeYesorNo",
+    message: "Would you like to add an employee?",
+    choices: [
+        new inquirer.Separator(" = Select Yes or No = "),
+        {
+            name: "Yes",
+        },
+        {
+            name: "No",
+        },
+    ],
+};
+
+
 //array to enter new employee
 const employeeTypeSelection = {
     type: "list",
@@ -97,3 +115,42 @@ const engineerQuestionList = [
         message: "Please enter the engineers github username",
     },
 ];
+
+
+// // code to create a team page
+// createTeamPage();
+
+// //code to prompt the create team page
+// function createTeamPage() {
+//     inquirer.prompt()
+// }
+
+createManagerFromInput();
+
+// create a manager
+function createManagerFromInput() {
+    inquirer.prompt(managerQuestionList).then((managerAnswerInput) => {
+
+    createManager(managerAnswerInput);
+    createNewEmployee();
+
+    });
+
+
+}
+
+async function createNewEmployee(){
+    await inquirer.prompt(employeeTypeSelection).then((employeeTypeSelectionAnswers) => {
+        if (employeeTypeSelectionAnswers.employeeType === "Yes") {
+            createNewEmployeeInfo();
+        } else {
+            generateHTML();
+        }
+    });
+}
+
+//what type of employee would you like to generate
+
+function createNewEmployeeInfo() {
+    inquirer.prompt(employeeTypeSelection).then((employeeTypeSelectionAnswer))
+}
