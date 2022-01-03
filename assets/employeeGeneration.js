@@ -25,11 +25,11 @@ let internBox = `<div class="box" style="width: 17rem;">
 };
 let createManager  = (managerAnswers) => {
     const { manager, managersIdNumber, managersEmail, managersOffice } =
-    internAnswers;
+    managerAnswers;
 
 let managerBox = `<div class="box" style="width: 17rem;">
     <div class="box-body">
-        <h3 class="box-title bgred">Intern</h3>
+        <h3 class="box-title bgred">Manager</h3>
         <h4 class="box-title">${manager}</h4>
         <p class="box-text">
         Employee ID: ${managersIdNumber}
@@ -44,9 +44,52 @@ let managerBox = `<div class="box" style="width: 17rem;">
     return arrayOfEmployees;
 
 };
+let createEngineer  = (engineerAnswers) => {
+    const { engineer, engineersIdNumber, engineersEmail, engineersGithub } =
+    managerAnswers;
+
+let engineerBox = `<div class="box" style="width: 17rem;">
+    <div class="box-body">
+        <h3 class="box-title bgred">Engineer</h3>
+        <h4 class="box-title">${engineer}</h4>
+        <p class="box-text">
+        Employee ID: ${engineersIdNumber}
+        <br>
+        Github: ${engineersGithub}
+        <br>
+        Email: ${engineersEmail}
+        </div>
+        </div>`;
+
+    arrayOfEmployees.push(engineerBox);
+    return arrayOfEmployees;
+
+};
 
 
 
+let htmlCreation = () => {
+    let totalArray = arrayOfEmployees.join(" ");
+}
+
+
+
+
+
+
+
+
+
+
+
+const createEmployees = {
+    createManager,
+    createIntern,
+    createEngineer,
+    htmlCreation,
+};
+
+module.exports = createEmployees;
 
 
 
