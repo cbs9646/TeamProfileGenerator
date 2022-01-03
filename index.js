@@ -160,7 +160,7 @@ function createManagerFromInput() {
 
 }
 
-async function createNewEmployee(){
+async function createNewEmployee() {
     await inquirer.prompt(employeeTypeSelection).then((employeeTypeSelectionAnswers) => {
         if (employeeTypeSelectionAnswers.employeeType === "Yes") {
             createNewEmployeeInfo();
