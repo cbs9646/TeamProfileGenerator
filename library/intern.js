@@ -1,10 +1,11 @@
-class Intern extends Employee {
+
+
+class intern extends Employee {
     
-    constructor(name, id, email, school){
+    constructor(name, id, email, role, school){
         super(name, id, email)
-        
         this.school = school;
-    
+        this.role = role;
     }
 
     getRole(){
@@ -16,3 +17,5 @@ class Intern extends Employee {
 
     }
 }
+
+module.exports = intern;
