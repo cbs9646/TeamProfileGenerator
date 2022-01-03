@@ -10,12 +10,13 @@ describe('Employee', () => {
     describe('instantiation', () => {
         it('should pass and instantiate object correctly ', () => {
             // arrange
-            let testEmployee = new Employee ("Jason", 1, "jasong@gmail.com");
+            let testEmployee = new Employee ("Jason", 1, "jasong@gmail.com", "Employee");
             //act
             //assert
-            expect(testEmployee.name).toBe("Jason")
-            expect(testEmployee.id).toBe(1)
-            expect(testEmployee.email).toBe("jasong@gmail.com")
+            expect(testEmployee.name).toEqual("Jason");
+            expect(testEmployee.id).toEqual(1);
+            expect(testEmployee.email).toEqual("jasong@gmail.com");
+            expect(testEmployee.role).toEqual("Employee");
         });
     });
 
@@ -26,7 +27,7 @@ describe('Employee', () => {
             //act
             let email = testEmployee.getEmail();
             //assert
-            expect(email).toBe("jasong@gmail.com");
+            expect(email).toEqual("jasong@gmail.com");
         });
     });
 
@@ -37,7 +38,7 @@ describe('Employee', () => {
             //act
             let id = testEmployee.getId();
             //assert
-            expect(id).toBe(1);
+            expect(id).toEqual(1);
         });
     });
 
@@ -48,7 +49,7 @@ describe('Employee', () => {
             //act
             let name = testEmployee.getName();
             //assert
-            expect(name).toBe("Jason");
+            expect(name).toEqual("Jason");
         });
     });
 
@@ -59,12 +60,8 @@ describe('Employee', () => {
             //act
             let role = testEmployee.getRole();
             //assert
-            expect(role).toBe();
+            expect(role).toEqual("Employee");
         });
     });
     
-
-
-
-
 });
