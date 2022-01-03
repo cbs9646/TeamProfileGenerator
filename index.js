@@ -173,5 +173,27 @@ async function createNewEmployee(){
 //what type of employee would you like to generate
 
 function createNewEmployeeInfo() {
-    inquirer.prompt(employeeTypeSelection).then((employeeTypeSelectionAnswer))
+    inquirer.prompt(employeeTypeSelection).then((employeeTypeSelectionAnswer) => {
+        console.log(employeeTypeSelectionAnswer.employeeType);
+        if (employeeTypeSelectionAnswer.employeeType === "Intern") {
+            createInternInfo();
+        } else {
+            createEngineerInfo();
+        }
+    });
+}
+
+function createInternInfo() {
+    inquirer.prompt(internQuestionList).then((internAnswerResponses) => {
+     createIntern(internAnswerResponses)
+     createNewEmployee();
+     
+    });
+}
+
+function createEngineerInfo() {
+    inquirer.prompt(engineerQuestionList).then((engineerAnswerResponses) => {
+        createEngineer(engineerAnswerResponses)
+        createNewEmployee();
+    });
 }
