@@ -9,6 +9,24 @@ const createEngineer = createEmployees.createEngineer;
 const createIntern = createEmployees.createIntern;
 const htmlCreation = createEmployees.htmlCreation;
 
+
+const generateTeamPageQuestion = {
+    type: "list",
+    name: "teamPageAnswerChoice",
+    message: "Would you like to create a Team Profile Page?",
+    choices: [
+        new inquirer.Separator(" = Please choose Yes or No = "),
+        {
+            name: "Yes",
+        },
+        {
+            name: "No",
+        },
+    ],
+};
+
+
+
 // array code for manager's data entry 
 
 const managerQuestionList = [
@@ -117,15 +135,18 @@ const engineerQuestionList = [
 ];
 
 
-// // code to create a team page
-// createTeamPage();
+//  code to create a team page
+ createTeamPage();
 
-// //code to prompt the create team page
-// function createTeamPage() {
-//     inquirer.prompt()
-// }
-
-createManagerFromInput();
+//code to prompt the create team page
+ function createTeamPage() {
+    inquirer.prompt(generateTeamPageQuestion).then((generateTeamPageAnswer) => {
+        if (generateTeamPageAnswer.teamPageAnswerChoice === "End") {
+            process.exit();
+        }
+        createManagerFromInput();
+    });
+ }
 
 // create a manager
 function createManagerFromInput() {
@@ -144,7 +165,7 @@ async function createNewEmployee(){
         if (employeeTypeSelectionAnswers.employeeType === "Yes") {
             createNewEmployeeInfo();
         } else {
-            generateHTML();
+            htmlCreation();
         }
     });
 }
