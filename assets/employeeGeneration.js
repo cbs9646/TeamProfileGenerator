@@ -70,6 +70,59 @@ let engineerBox = `<div class="box" style="width: 17rem;">
 
 let htmlCreation = () => {
     let totalArray = arrayOfEmployees.join(" ");
+
+let generatedTeamPage = `<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Team</title>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Team</a>
+      </div>
+  </nav>
+  <header>
+  </header>
+  <main>
+  <div class="justify-content-center align-items-center d-flex">
+  ${totalArray}
+  </div>
+  </main>
+  <footer>
+  </footer>
+  
+  <script src="scripts.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
