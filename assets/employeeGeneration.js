@@ -95,13 +95,13 @@ let generatedTeamPage = `<html lang="en">
   </main>
   <footer>
   </footer>
-  
+<script type="text/javascript" src="js/materialize.min.js"></script>  
   <script src="scripts.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
+
 </body>
 </html>`;
 
-const output = `./output/index.html`;
+const output = `./index.html`;
     fs.writeFile(output, generatedTeamPage, (err) =>
     err ? console.error(err) : console.log("generated correctly")
   );
