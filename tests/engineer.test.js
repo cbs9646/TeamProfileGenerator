@@ -13,7 +13,7 @@ describe('Engineer', () => {
             expect ()
             expect(testEngineer.name).toEqual("Jason")
             expect(testEngineer.id).toEqual(1)
-            expect(testEngineer.email).toEqual("jasong@github.com")
+            expect(testEngineer.email).toEqual("jasong@gmail.com")
             expect(testEngineer.role).toEqual("Engineer")
             expect(testEngineer.github).toEqual("JasonG")
         });
@@ -22,7 +22,7 @@ describe('Engineer', () => {
     describe('get Github', () => {
         it('should return github link correctly.', () => {
             // arrange
-            let testEngineer = new Engineer("Jason", 1, "jasong@gmail.com", "Engineer", "JasonG");
+            let testEngineer = new Engineer ("Jason", 1, "jasong@gmail.com", "Engineer", "JasonG");
             //act
             let github = testEngineer.getGithub();
             //assert
@@ -35,9 +35,9 @@ describe('get Role', () => {
             // arrange
             let testEngineer = new Engineer("Jason", 1, "jasong@gmail.com", "Engineer", "JasonG");
             //act
-            let github = testEngineer.getRole();
+            let role = testEngineer.getRole();
             //assert
-            expect(role).toEqual("JasonG");
+            expect(role).toEqual("Engineer");
         });
     });
    

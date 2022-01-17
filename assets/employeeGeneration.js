@@ -3,13 +3,13 @@ const fs = require("fs");
 const arrayOfEmployees = [];
 
 let createIntern  = (internAnswers) => {
-    const { intern, internsIdNumber, internsEmail, internsSchoolAttended } =
+    const { Intern, internsIdNumber, internsEmail, internsSchoolAttended } =
     internAnswers;
 
 let internBox = `<div class="box" style="width: 17rem;">
     <div class="box-body">
         <h3 class="box-title bgred">Intern</h3>
-        <h4 class="box-title">${intern}</h4>
+        <h4 class="box-title">${Intern}</h4>
         <p class="box-text">
         Employee ID: ${internsIdNumber}
         <br>
@@ -45,13 +45,13 @@ let managerBox = `<div class="box" style="width: 17rem;">
 
 };
 let createEngineer  = (engineerAnswers) => {
-    const { engineer, engineersIdNumber, engineersEmail, engineersGithub } =
-    managerAnswers;
+    const { Engineer, engineersIdNumber, engineersEmail, engineersGithub } =
+    engineerAnswers;
 
 let engineerBox = `<div class="box" style="width: 17rem;">
     <div class="box-body">
         <h3 class="box-title bgred">Engineer</h3>
-        <h4 class="box-title">${engineer}</h4>
+        <h4 class="box-title">${Engineer}</h4>
         <p class="box-text">
         Employee ID: ${engineersIdNumber}
         <br>

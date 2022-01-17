@@ -92,7 +92,7 @@ const employeeTypeSelection = {
 const internQuestionList = [
     { 
         type: "input",
-        name: "intern",
+        name: "Intern",
         message: "Please enter this new intern's name"
     },
     {
@@ -114,7 +114,7 @@ const internQuestionList = [
 const engineerQuestionList = [
     { 
         type: "input",
-        name: "engineer",
+        name: "Engineer",
         message: "Please enter this new engineer's name"
     },
     {
@@ -141,7 +141,7 @@ const engineerQuestionList = [
 //code to prompt the create team page
  function createTeamPage() {
     inquirer.prompt(generateTeamPageQuestion).then((generateTeamPageAnswer) => {
-        if (generateTeamPageAnswer.teamPageAnswerChoice === "End") {
+        if (generateTeamPageAnswer.teamPageAnswerChoice === "No") {
             process.exit();
         }
         createManagerFromInput();
@@ -161,8 +161,8 @@ function createManagerFromInput() {
 }
 
 async function createNewEmployee() {
-    await inquirer.prompt(employeeTypeSelection).then((employeeTypeSelectionAnswers) => {
-        if (employeeTypeSelectionAnswers.employeeType === "Yes") {
+    await inquirer.prompt(createNewEmployeeQuestion).then((createNewEmployeeQuestionAnswers) => {
+        if (createNewEmployeeQuestionAnswers.createNewEmployeeYesorNo === "Yes") {
             createNewEmployeeInfo();
         } else {
             htmlCreation();
