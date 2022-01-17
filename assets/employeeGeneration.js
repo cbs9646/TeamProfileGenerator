@@ -99,41 +99,15 @@ let generatedTeamPage = `<html lang="en">
   <script src="scripts.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
-</html>`
+</html>`;
 
+const output = `./output/index.html`;
+    fs.writeFile(output, generatedTeamPage, (err) =>
+    err ? console.error(err) : console.log("generated correctly")
+  );
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
+//Exports 
 
 const createEmployees = {
     createManager,
